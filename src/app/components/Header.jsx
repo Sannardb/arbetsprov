@@ -2,7 +2,7 @@ import React from "react";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
-  const categories = ["Kvinnor", "Män", "Nyheter"];
+  const categories = ["Women", "Men", "News"];
 
   return (
     <header className="bg-white shadow-md py-4 px-6">

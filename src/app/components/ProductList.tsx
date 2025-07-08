@@ -3,22 +3,25 @@
 import React, { useState } from "react";
 import produkter from "@/data/produkter.json";
 import ProductCard from "./ProductCard";
+import { Product } from "../types/Product";
 
 const ProductList = () => {
   const [selectedColor, setSelectedColor] = useState("");
 
+  const products: Product[] = produkter;
+
   const sortColors = Array.from(
     new Set(
-      produkter.map((p) => p.color?.toLowerCase()).filter((color) => color) // skapar en lista, tar bort ogiltiga/tomma värden
+      products.map((p) => p.color?.toLowerCase()).filter((color) => color) // skapar en lista, tar bort ogiltiga/tomma värden
     )
   );
 
   const filteredProducts = selectedColor
-    ? produkter.filter(
+    ? products.filter(
         (product) =>
           product.color?.toLowerCase() === selectedColor.toLowerCase()
       )
-    : produkter; // filtrerar på vald färg, om ingen färg är vald visas alla produkter
+    : products; // filtrerar på vald färg, om ingen färg är vald visas alla produkter
 
   return (
     <div className="bg-gray-100 py-10 px-20">

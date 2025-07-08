@@ -1,6 +1,11 @@
 import React from "react";
+import { Product } from "../types/Product";
 
-const ProductCard = ({ product }) => {
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="rounded-2xl shadow-md p-4 bg-white hover:shadow-lg transition-shadow">
       {product["image-url"] && (

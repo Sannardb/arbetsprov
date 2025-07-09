@@ -1,6 +1,5 @@
-export interface Product {
+interface ProductAttributes {
   "article-number": string;
-  title: string;
   "image-url": string;
   price: number;
   description: string;
@@ -9,4 +8,14 @@ export interface Product {
   size: string;
   "url-slug": string;
   brand: string;
+}
+
+interface ProductGroup {
+  title: string;
+  attributes: ProductAttributes[];
+}
+
+interface ProductCardProps {
+  product: ProductGroup;
+  selectedColor?: string;
 }
